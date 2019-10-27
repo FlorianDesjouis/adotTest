@@ -20,7 +20,7 @@ app.post('/interest', function(req, res) {
     let count2 = 0;
     dataArray.forEach(data => {
         result.forEach(interest => {
-            let dist = distance(data.lat, data.lon, interest.lat, interest.lon, 'K');
+            let dist = distance(data.lat, data.lon, interest.lat, interest.lon);
             if (!data.distToCloser || data.distToCloser > dist) {
                 data.distToCloser = dist;
                 data.interestName = interest.name;
